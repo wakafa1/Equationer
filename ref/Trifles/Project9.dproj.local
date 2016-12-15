@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.609,=D:\360data\重要数据\我的文档\RAD Studio\Projects\Unit8.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.218,=D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.156,=D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.015,D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT1.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.046,D:\360data\重要数据\我的文档\RAD Studio\Projects\Unit8.dfm=D:\360data\重要数据\我的文档\RAD Studio\code_templates\Unit8.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.046,D:\360data\重要数据\我的文档\RAD Studio\Projects\Unit8.pas=D:\360data\重要数据\我的文档\RAD Studio\code_templates\Unit8.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.046,D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.171,D:\360data\重要数据\我的文档\RAD Studio\Projects\Project9.dproj=D:\360data\重要数据\我的文档\RAD Studio\Projects\Project9.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.156,D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.dfm=D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.968,=D:\360data\重要数据\我的文档\RAD Studio\Projects\Unit12.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.765,=D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.125,D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.156,D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT.pas=D:\360data\重要数据\我的文档\RAD Studio\Projects\ABOUT1.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\RAD Studio"/>
+    <File Path="..\code_templates"/>
+    <File Path="..\code_templates\Unit8.pas"/>
+    <File Path="..\code_templates\Unit8.dfm"/>
+    <File Path="Unit12.pas"/>
+    <File Path="Unit12.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
