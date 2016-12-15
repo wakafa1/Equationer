@@ -43,7 +43,8 @@ object Form1: TForm1
         OnClick = N7Click
       end
       object N8: TMenuItem
-        Caption = #35775#38382#36719#20214#20027#39029
+        Caption = #35775#38382#20316#32773#20027#39029
+        OnClick = N8Click
       end
     end
     object UnabledItem: TMenuItem
