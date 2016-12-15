@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, ShellAPI;
 
 type
   TForm1 = class(TForm)
@@ -22,6 +22,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure N7Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -91,6 +92,11 @@ end;
 procedure TForm1.N7Click(Sender: TObject);
 begin
   Form2.ShowModal;
+end;
+
+procedure TForm1.N8Click(Sender: TObject);
+begin
+  ShellExecute(Application.Handle, nil, 'http://www.github.com/wakafa1/', nil, nil, SW_SHOWNORMAL);
 end;
 
 end.
