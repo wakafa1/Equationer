@@ -41,7 +41,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <SanitizedProjectName>Equationer</SanitizedProjectName>
-        <VCL_Custom_Styles>&quot;Emerald Light Slate|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\15.0\Styles\EmeraldLightSlate.vsf&quot;</VCL_Custom_Styles>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
@@ -88,6 +87,10 @@
         </DelphiCompile>
         <DCCReference Include="Unit1.pas">
             <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit2.pas">
+            <Form>Form2</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
