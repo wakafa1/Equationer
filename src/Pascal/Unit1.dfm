@@ -1,10 +1,13 @@
 object Form1: TForm1
+  AlignWithMargins = True
   Left = 0
   Top = 0
+  Anchors = []
   Caption = 'Equationer'
-  ClientHeight = 270
+  ClientHeight = 266
   ClientWidth = 505
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -12,11 +15,22 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 14
+  object Answerbt: TButton
+    Left = 0
+    Top = 208
+    Width = 505
+    Height = 58
+    Align = alBottom
+    Caption = 'Answer'
+    TabOrder = 0
+  end
   object MainMenu1: TMainMenu
-    Top = 232
+    Left = 464
+    Top = 8
     object N1: TMenuItem
       Caption = #25805#20316
       Hint = 'Operation'
@@ -26,9 +40,9 @@ object Form1: TForm1
       object N4: TMenuItem
         Caption = #22797#20301
       end
-      object N5: TMenuItem
+      object Flag: TMenuItem
         Caption = #29992#24102#20998#25968#26174#31034
-        OnClick = N5Click
+        OnClick = FlagClick
       end
       object N6: TMenuItem
         Caption = #20851#38381

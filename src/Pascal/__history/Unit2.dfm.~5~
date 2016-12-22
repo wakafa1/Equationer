@@ -12,8 +12,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesktopCenter
-  OnShow = FormShow
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -329,8 +328,8 @@ object Form2: TForm2
   object Memo1: TMemo
     Left = 8
     Top = 223
-    Width = 233
-    Height = 90
+    Width = 217
+    Height = 73
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -341,8 +340,7 @@ object Form2: TForm2
       'wakafa'
       ''
       'A student in UCAS, Beijing'
-      'Welcome for your advice and assist'
-      'Phone:13063930225')
+      'Welcome for your advice and assist')
     ParentFont = False
     TabOrder = 0
   end

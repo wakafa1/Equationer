@@ -5,8 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls,
-  Unit1;
+  Vcl.ExtCtrls;
 
 type
   TForm2 = class(TForm)
@@ -28,15 +27,12 @@ implementation
 
 procedure TForm2.FormShow(Sender: TObject);
 begin
-  with Form2 do
+  with form2 do
   begin
     BorderIcons := [biSystemMenu, biMinimize];
     BorderStyle := bsDialog;
-    if Form1.Regi_Flag = False then Caption := 'Unregistered'
-                               else Caption := '关于本软件';
+    Caption := '关于本软件';
   end;
-
-
 end;
 
 end.

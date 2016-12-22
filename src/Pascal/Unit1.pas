@@ -14,19 +14,27 @@ type
     UnabledItem: TMenuItem;
     N3: TMenuItem;
     N4: TMenuItem;
-    N5: TMenuItem;
+    Flag: TMenuItem;
     N6: TMenuItem;
     N7: TMenuItem;
     N8: TMenuItem;
-    procedure N5Click(Sender: TObject);
+    Answerbt: TButton;
+    procedure FlagClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure N7Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
   private
     { Private declarations }
+
+  const _Answerbt_Height: LongInt = 40;
+        _Welcome_Word: String = 'W e l c o m e';
+
   public
     { Public declarations }
+
+  var Regi_Flag: Boolean;
+
   end;
 
 var
@@ -43,45 +51,55 @@ var Data:array[1..2,1..3]of TEdit;
 procedure TForm1.FormCreate(Sender: TObject);
 var
   I: Integer;
-  j: Integer;
+  J: Integer;
 
 begin
 
   //Init the MainForm
-  N5.Checked := False;
+  Flag.Checked := False;
+  Regi_Flag := False;         //Check the registered state
   with form1 do
   begin
     BorderIcons := [biMinimize,biSystemMenu];
     BorderStyle := bsSingle;
   end;
 
+  //Init the answerbutton
+  with Answerbt do
+  begin
+    Align       := alBottom;
+    Height      := _Answerbt_Height;
+    Font.Size   := 15;
+    Caption     := _Welcome_Word;
+  end;
+
   //Init the Editors with an array of TEdit
   for I := 1 to 2 do
-    for j := 1 to 3 do
+    for J := 1 to 3 do
     begin
       Data[i,j] := TEdit.Create(Self);
       with Data[i,j] do
       begin
             Parent     := Self;
             Text       := '';
-          //Width      := 40;
-          //Height     := 15;
+            Width      := 100;
+            Height     := 28;
             Top	       := 70*(i-1)+35;
             Left       := ((j-1)*150)+15;
             AutoSize   := False;
             Alignment  := taCenter;
           //Color      := clsilver;
           //Font.Style := [fsBold];
-            Font.Size  := 10;
+            Font.Size  := 13;
       end;
     end;
 
 end;
 
-procedure TForm1.N5Click(Sender: TObject);
+procedure TForm1.FlagClick(Sender: TObject);
 begin
-  if not(N5.Checked) then N5.Checked := True
-                     else N5.Checked := False;
+  if not(Flag.Checked) then Flag.Checked := True
+                       else Flag.Checked := False;
 end;
 
 procedure TForm1.N6Click(Sender: TObject);
@@ -91,11 +109,13 @@ end;
 
 procedure TForm1.N7Click(Sender: TObject);
 begin
+  //Call AboutForm
   Form2.ShowModal;
 end;
 
 procedure TForm1.N8Click(Sender: TObject);
 begin
+  //Use ShellAPI to link to the outside webside
   ShellExecute(Application.Handle, nil, 'http://www.github.com/wakafa1/', nil, nil, SW_SHOWNORMAL);
 end;
 
