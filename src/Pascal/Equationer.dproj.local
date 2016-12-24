@@ -6,9 +6,16 @@
     <Transaction>2016/12/15 20:50:59.000.013,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Equationer.dproj</Transaction>
     <Transaction>2016/12/15 20:54:10.000.701,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2016/12/15 20:54:10.000.701,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2016/12/15 20:55:38.000.318,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit1.dfm</Transaction>
     <Transaction>2016/12/15 20:55:38.000.318,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit1.pas</Transaction>
+    <Transaction>2016/12/15 20:55:38.000.318,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit1.dfm</Transaction>
     <Transaction>2016/12/15 20:55:46.000.336,C:\Users\wakaf\Documents\Embarcadero\Studio\Projects\Equationer.dproj=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Equationer.dproj</Transaction>
     <Transaction>2016/12/15 21:23:03.000.700,=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit2.pas</Transaction>
+    <Transaction>2016/12/24 10:40:55.000.566,=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit8.pas</Transaction>
+    <Transaction>2016/12/24 10:42:00.000.577,C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit8.pas=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unitmain.pas</Transaction>
+    <Transaction>2016/12/24 10:42:00.000.577,C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit8.dfm=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unitmain.dfm</Transaction>
+    <Transaction>2016/12/24 10:42:13.000.356,C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit2.pas=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\About.pas</Transaction>
+    <Transaction>2016/12/24 10:42:13.000.356,C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit2.dfm=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\About.dfm</Transaction>
+    <Transaction>2016/12/24 10:51:55.424,C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Advance.dfm=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit1.dfm</Transaction>
+    <Transaction>2016/12/24 10:51:55.424,C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Advance.pas=C:\Users\wakaf\Desktop\Project\Equationer\src\Pascal\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
