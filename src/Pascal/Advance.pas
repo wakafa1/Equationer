@@ -8,18 +8,7 @@ uses
 
 type
   TForm1 = class(TForm)
-    MainMenu1: TMainMenu;
-    N1: TMenuItem;
-    N2: TMenuItem;
-    UnabledItem: TMenuItem;
-    N3: TMenuItem;
-    N4: TMenuItem;
-    Flag: TMenuItem;
-    N6: TMenuItem;
-    N7: TMenuItem;
-    N8: TMenuItem;
     Answerbt: TButton;
-    procedure FlagClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure N7Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -56,7 +45,6 @@ var
 begin
 
   //Init the MainForm
-  Flag.Checked := False;
   Regi_Flag := False;         //Check the registered state
   with form1 do
   begin
@@ -94,12 +82,6 @@ begin
       end;
     end;
 
-end;
-
-procedure TForm1.FlagClick(Sender: TObject);
-begin
-  if not(Flag.Checked) then Flag.Checked := True
-                       else Flag.Checked := False;
 end;
 
 procedure TForm1.N6Click(Sender: TObject);

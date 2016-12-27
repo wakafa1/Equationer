@@ -4,8 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ShellAPI, Menus, ExtCtrls, System.UITypes,
-  RibbonLunaStyleActnCtrls, Ribbon;
+  Dialogs, StdCtrls, Buttons, ShellAPI, Menus, ExtCtrls, System.UITypes;
 
 type
   TForm8 = class(TForm)
@@ -56,6 +55,7 @@ type
     procedure CheckBox1Click(Sender: TObject);
     procedure D2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 
   private
     { Private declarations }
@@ -68,6 +68,9 @@ var
 
   e1,e2,e3,e4,e5,e6:boolean;
   err:boolean;
+  fact:Word;
+
+const Text_MaxLength = 7;
 
 implementation
 
@@ -150,17 +153,11 @@ begin
 
   //去小数点
 
-  for I := 1 to length(a) do
-    if a[i]='.' then
-      delete(a,i,1);
+  for I := 1 to length(a) do if a[i]='.' then delete(a,i,1);
 
-  for I := 1 to length(b) do
-    if b[i]='.' then
-      delete(b,i,1);
+  for I := 1 to length(b) do if b[i]='.' then delete(b,i,1);
 
-  for I := 1 to length(c) do
-    if c[i]='.' then
-      delete(c,i,1);
+  for I := 1 to length(c) do if c[i]='.' then delete(c,i,1);
 
   //加0
 
@@ -180,15 +177,6 @@ end;
 function GCD(a,b:longint):longint;
 var r1:longint;
 begin
-  {if b=0 then
-           begin
-             if err then
-               exit;
-             messagedlg('对不起，您输入的是死方程！',mterror,[mbok],0);
-             err:=true;
-             exit;
-           end; }
-
   r1:=a mod b;
 
   while r1<>0 do
@@ -196,16 +184,6 @@ begin
 
       a:=b;
       b:=r1;
-
-      {if b=0 then
-        begin
-          if err then
-               exit;
-          messagedlg('对不起，您输入的是死方程！',mterror,[mbok],0);
-          err:=true;
-          exit;
-        end; }
-
       r1:=a mod b;
 
     end;
@@ -220,36 +198,34 @@ begin
 
   ja:=a;
   jb:=b;
-
-  {if b=0 then
-        begin
-          if err then
-               exit;
-          messagedlg('对不起，您输入的是死方程！',mterror,[mbok],0);
-          err:=true;
-          exit;
-        end;    }
-
   r1:=a mod b;
 
   while r1<>0 do
     begin
       a:=b;
       b:=r1;
-     { if b=0 then
-        begin
-          if err then
-               exit;
-          messagedlg('对不起，您输入的是死方程！',mterror,[mbok],0);
-          err:=true;
-          exit;
-        end; }
       r1:=a mod b;
     end;
 
   LCM:=jb div b*ja;
 
 end;
+
+procedure LongData_Operation;
+var point:longint;
+    s:string;
+begin
+  //Speedbutton1.top    := 170;          //209
+  Speedbutton1.Height := 50;        //35
+
+    point := Pos('y',SpeedButton1.Caption);
+    s := SpeedButton1.Caption;
+    Insert(#13,s,point);
+    SpeedButton1.Caption := s;
+
+  SpeedButton1.Font.Size := 16;
+end;
+
 
 procedure Data_Operation(var a,b,c:string);
 var sts:array[1..2,1..3]of string;  //存字符串
@@ -727,23 +703,6 @@ begin
                       ls1:=ls1 div divisor;
                       ls2:=ls2 div divisor;
 
-                      {if ls1>ls2 then
-                                    begin
-                                      if err then
-                                        exit;
-                                        divisor:=GCD(ls1,ls2)
-                                    end
-                                  else
-                                    begin
-                                      if err then
-                                        exit;
-                                      divisor:=GCD(ls1,ls2);
-                                    end; }
-
-
-                      {ls1:=ls1 div divisor;
-                      ls2:=ls2 div divisor;   }
-
                       if ls2>ls1 then
                         begin
                           str(ls2 div ls1,mixed_number);
@@ -791,9 +750,6 @@ begin
                       str(x,st);
                       speedbutton1.Caption:='x='+copy(st,1,5)+'     ';     }
                     end;
-
-
-
 
 
             end;
@@ -1028,20 +984,28 @@ begin
 
 
      end;
+  // 改变按钮的高度
+
   if length(speedbutton1.Caption)>31  then
-  begin
-    speedbutton1.top:=170;          //209
-    speedbutton1.Height:=86;        //35
-  end;
+    LongData_Operation;
 end;
 
 procedure TForm8.CheckBox1Click(Sender: TObject);
 begin
   if checkbox1.Checked
     then
-      d1.Checked:=true
+      begin
+        d1.Checked:=True;
+        SendMessage(Button1.Handle,WM_LBUTTONDOWN,0,0);
+        SendMessage(Button1.Handle,WM_LBUTTONUP,0,0);  //一定要随后发一个WM_LBUTTONUP的消息，否则按钮只下去，不起来
+      end
     else
-      d1.Checked:=false;
+      begin
+        d1.Checked:=false;
+        SendMessage(Button1.Handle,WM_LBUTTONDOWN,0,0);
+        SendMessage(Button1.Handle,WM_LBUTTONUP,0,0);
+      end;
+
 end;
 
 procedure TForm8.D1Click(Sender: TObject);
@@ -1065,14 +1029,30 @@ begin
       close;
 end;
 
+procedure TForm8.Edit1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  fact:=Key;
+end;
+
 procedure TForm8.EditKeyPress(Sender: TObject; var Key: Char);
 var
   lst:string;
 begin
   Form8.SpeedButton1.Caption:='欢 迎 使 用';
-  Form8.Speedbutton1.top:=209;          //209
+  Form8.Speedbutton1.Top:=209;          //209
   Form8.Speedbutton1.Height:=35;
+
   //优化
+  //ShowMessage(FLOATTOSTR(fact));
+  //if Ord(key)=12290 then key:='.';
+  //if (Key=#8)and(fact<>8) then key:=#0;
+
+  //ShowMessage(IntToStr(Ord(key)));
+  case Key of
+    '。': begin Key := '.';  end;            //（bug注意）按两下‘。’会引起退格
+    '、': Key := '/';
+  end;
 
   if (key='.')and(length((Sender as TEdit).Text)=0) then
   begin
@@ -1083,22 +1063,32 @@ begin
     exit;
   end;
 
-  //debug
+  //小数点处理
 
-  if (key='/')and(length((Sender as TEdit).Text)=0) then
+  if (key='.')and(pos('/',(Sender as TEdit).Text)>0) then
     begin
       key:=#0;
       exit;
     end;
 
-
-  {if (key='0')and(length(edit1.Text)=0) then
+  if (key='.')and((Sender as TEdit).Text[Length((Sender as TEdit).Text)]='.') then
     begin
-      key:=#0;
+      key:=#0;                       //问题也不在这里
       exit;
-    end;   }
+    end;
 
-  if (key='.')and(length((Sender as TEdit).Text)=0) then
+  //if (Sender as TEdit).Text<>'' then ShowMessage((Sender as TEdit).Text[Length((Sender as TEdit).Text)]);
+  lst:=copy((Sender as TEdit).Text,1,length((Sender as TEdit).Text));      //问题不在这里
+
+  if (key='.')and(Pos('.',lst)<>0) then
+    begin
+      key := #0;
+      exit;
+    end;
+
+  //分号处理
+
+  if (key='/')and(length((Sender as TEdit).Text)=0) then
     begin
       key:=#0;
       exit;
@@ -1110,17 +1100,19 @@ begin
       exit;
     end;
 
-  if (key='.')and(pos('/',(Sender as TEdit).Text)>0) then
+  if (key='/')and(pos('/',(Sender as TEdit).Text)<>0) then
     begin
-      key:=#0;
+      key := #0;
       exit;
     end;
 
-  if (key='.')and((Sender as TEdit).Text[length((Sender as TEdit).Text)-1]='.') then
-    begin
-      key:=#0;
-      exit;
-    end;
+  if key<>#8 then
+               if (length((Sender as TEdit).Text)=Text_MaxLength)or( not (Key in ['0'..'9','.','-','/']))
+                  then
+                  begin
+                    Key := #0;
+                    exit;
+                  end;
 
   {e1:=true;
   for i := 1 to length(edit1.text)-1 do
@@ -1132,26 +1124,6 @@ begin
   if (key='.') then
                  if e1=false then
                    key:=#0;   }
-
-  lst:=copy((Sender as TEdit).Text,1,length((Sender as TEdit).Text));
-
-  if (key='.')and(pos('.',lst)<>0) then
-    begin
-      key:=#0;
-      exit;
-    end;
-
-  if (key='/')and(pos('/',(Sender as TEdit).Text)<>0) then
-    begin
-      key:=#0;
-      exit;
-    end;
-
-
-
-  if key<>#8 then
-               if (length((Sender as TEdit).Text)=5)or( not (Key in ['0'..'9','.','-','/']))  then  Key := Chr(0);
-
 end;
 
 procedure TForm8.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -1165,6 +1137,15 @@ end;
 
 procedure TForm8.FormCreate(Sender: TObject);
 begin
+  //Edit 初始化处理
+
+  Edit1.Alignment := taCenter;
+  Edit2.Alignment := taCenter;
+  Edit3.Alignment := taCenter;
+  Edit4.Alignment := taCenter;
+  Edit5.Alignment := taCenter;
+  Edit6.Alignment := taCenter;
+
   {
   //文件处理操作
   hide;
@@ -1298,8 +1279,10 @@ end;
 
 procedure TForm8.SpeedButton1Click(Sender: TObject);
 begin
-  speedbutton1.top:=209;          //209
-  speedbutton1.Height:=35;        //35
+  Speedbutton1.Top      := 209;          //209
+  Speedbutton1.Height   := 35;           //35
+  SpeedButton1.Font.Size:= 20;           //Initial
+
   edit1.Text:='';
   edit2.Text:='';
   edit3.Text:='';

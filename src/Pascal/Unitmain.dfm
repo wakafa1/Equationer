@@ -21,8 +21,8 @@ object Form8: TForm8
   PixelsPerInch = 96
   TextHeight = 16
   object Label1: TLabel
-    Left = 126
-    Top = 26
+    Left = 125
+    Top = 25
     Width = 46
     Height = 40
     Caption = 'x +'
@@ -34,7 +34,7 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 241
+    Left = 257
     Top = 25
     Width = 46
     Height = 40
@@ -60,7 +60,7 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 239
+    Left = 257
     Top = 83
     Width = 46
     Height = 40
@@ -73,12 +73,13 @@ object Form8: TForm8
     ParentFont = False
   end
   object SpeedButton1: TSpeedButton
-    Left = -5
-    Top = 209
-    Width = 468
+    Left = 0
+    Top = 208
+    Width = 458
     Height = 35
     Cursor = crArrow
     Hint = #22797#20301
+    Align = alBottom
     Caption = #27426' '#36814' '#20351' '#29992
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
@@ -89,6 +90,9 @@ object Form8: TForm8
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton1Click
+    ExplicitLeft = -5
+    ExplicitTop = 209
+    ExplicitWidth = 468
   end
   object Label5: TLabel
     Left = 318
@@ -102,6 +106,7 @@ object Form8: TForm8
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object Label6: TLabel
     Left = 339
@@ -109,6 +114,7 @@ object Form8: TForm8
     Width = 75
     Height = 16
     Caption = #33521#25991#36755#20837#27861
+    Visible = False
   end
   object Label7: TLabel
     Left = 103
@@ -167,9 +173,9 @@ object Form8: TForm8
     Caption = '\'
   end
   object Label13: TLabel
-    Left = 407
+    Left = 412
     Top = 41
-    Width = 12
+    Width = 15
     Height = 19
     Caption = #9312
     Font.Charset = DEFAULT_CHARSET
@@ -180,9 +186,9 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label14: TLabel
-    Left = 407
+    Left = 412
     Top = 99
-    Width = 12
+    Width = 15
     Height = 19
     Caption = #9313
     Font.Charset = DEFAULT_CHARSET
@@ -193,9 +199,9 @@ object Form8: TForm8
     ParentFont = False
   end
   object Edit1: TEdit
-    Left = 63
+    Left = 49
     Top = 38
-    Width = 57
+    Width = 71
     Height = 24
     Cursor = crIBeam
     Hint = #35831#36755#20837#25968#25454
@@ -203,12 +209,13 @@ object Form8: TForm8
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
+    OnKeyDown = Edit1KeyDown
     OnKeyPress = EditKeyPress
   end
   object Edit2: TEdit
     Left = 178
     Top = 38
-    Width = 57
+    Width = 71
     Height = 24
     Cursor = crIBeam
     Hint = #35831#36755#20837#25968#25454
@@ -221,7 +228,7 @@ object Form8: TForm8
     OnKeyPress = EditKeyPress
   end
   object Edit3: TEdit
-    Left = 293
+    Left = 310
     Top = 38
     Width = 97
     Height = 24
@@ -234,9 +241,9 @@ object Form8: TForm8
     OnKeyPress = EditKeyPress
   end
   object Edit4: TEdit
-    Left = 64
+    Left = 49
     Top = 96
-    Width = 57
+    Width = 72
     Height = 24
     Cursor = crIBeam
     Hint = #35831#36755#20837#25968#25454
@@ -249,7 +256,7 @@ object Form8: TForm8
   object Edit5: TEdit
     Left = 176
     Top = 96
-    Width = 57
+    Width = 73
     Height = 24
     Cursor = crIBeam
     Hint = #35831#36755#20837#25968#25454
@@ -260,9 +267,9 @@ object Form8: TForm8
     OnKeyPress = EditKeyPress
   end
   object Edit6: TEdit
-    Left = 291
+    Left = 310
     Top = 96
-    Width = 99
+    Width = 97
     Height = 24
     Cursor = crIBeam
     Hint = #35831#36755#20837#25968#25454
@@ -315,6 +322,7 @@ object Form8: TForm8
     Height = 41
     Enabled = False
     TabOrder = 8
+    Visible = False
   end
   object MainMenu1: TMainMenu
     BiDiMode = bdLeftToRight
@@ -347,6 +355,7 @@ object Form8: TForm8
       end
       object N6: TMenuItem
         Caption = #25351#31034#25991#26412'(&I)'
+        Visible = False
         OnClick = N6Click
       end
     end
